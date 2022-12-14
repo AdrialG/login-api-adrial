@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "520411381038",
+    "project_id": "login-api-adrial",
+    "storage_bucket": "login-api-adrial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520411381038:android:5ef36dbd1d0373d7968ebf",
+        "android_client_info": {
+          "package_name": "com.example.apijson_loginregister"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520411381038-5da52sua1a84sn0gj389im1c3nfu9u96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARdPuVQwwfur14givHAFB9KK4G-hASo6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520411381038-5da52sua1a84sn0gj389im1c3nfu9u96.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
