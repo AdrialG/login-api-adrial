@@ -1,6 +1,6 @@
-package com.example.apijson_loginregister.ui.login
+package com.example.apijson_loginregister.ui.register
 
-
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -11,34 +11,27 @@ import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.textOf
 import com.example.apijson_loginregister.R
 import com.example.apijson_loginregister.base.activity.BaseActivity
-import com.example.apijson_loginregister.databinding.ActivityLoginBinding
+import com.example.apijson_loginregister.databinding.ActivityRegisterBinding
 import com.example.apijson_loginregister.ui.home.HomeActivity
-import com.example.apijson_loginregister.ui.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-
 @AndroidEntryPoint
-class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
+class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel> (R.layout.activity_register) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.btnLogin.setOnClickListener {
-            if (binding.etPhone.isEmptyRequired(R.string.label_must_fill) || binding.etPassword.isEmptyRequired(R.string.label_must_fill)){
+
+        binding.btnRegister.setOnClickListener {
+            if (binding.etName.isEmptyRequired(R.string.label_must_fill) || binding.etPhone.isEmptyRequired(R.string.label_must_fill) || binding.etPassword.isEmptyRequired(R.string.label_must_fill)){
                 return@setOnClickListener
             }
 
+            val name = binding.etName.textOf()
             val phone = binding.etPhone.textOf()
             val password = binding.etPassword.textOf()
 
-            viewModel.login(phone, password)
+            viewModel.register( name ,phone, password)
         }
-
-        binding.btnSignUp.setOnClickListener {
-            openActivity<RegisterActivity>() {
-                finish()
-            }
-        }
-
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -57,8 +50,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                 }
             }
         }
-
-
 
     }
 }

@@ -2,7 +2,7 @@ package com.example.apijson_loginregister.base.viewmodel
 
 import com.crocodic.core.base.viewmodel.CoreViewModel
 
-open class BaseVewModel : CoreViewModel () {
+open class BaseViewModel : CoreViewModel () {
     override fun apiLogout() {
         TODO("Not yet implemented")
     }

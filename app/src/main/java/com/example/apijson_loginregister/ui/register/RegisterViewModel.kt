@@ -1,4 +1,4 @@
-package com.example.apijson_loginregister.ui.login
+package com.example.apijson_loginregister.ui.register
 
 import androidx.lifecycle.viewModelScope
 import com.crocodic.core.api.ApiCode
@@ -17,10 +17,10 @@ import org.json.JSONObject
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val apiService: ApiService, private val gson: Gson,private val  userDao: UserDao): BaseViewModel() {
-    fun login(phone: String, password: String) = viewModelScope.launch {
+class RegisterViewModel @Inject constructor(private val apiService: ApiService, private val gson: Gson, private val  userDao: UserDao) :BaseViewModel() {
+    fun register(name: String , phone: String, password: String) = viewModelScope.launch {
         _apiResponse.send(ApiResponse().responseLoading())
-        ApiObserver({ apiService.login(phone, password)}, false, object : ApiObserver.ResponseListener {
+        ApiObserver({ apiService.register(phone, password,name)}, false, object : ApiObserver.ResponseListener {
             override suspend fun onSuccess(response: JSONObject) {
                 val status = response.getInt(ApiCode.STATUS)
                 if (status == ApiCode.SUCCESS) {

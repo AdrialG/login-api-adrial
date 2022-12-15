@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">APIJSON_loginregister</string>
+    <string name="app_name">Login by Adrial</string>
+    <string name="label_must_fill">Can you fill everything in?</string>
 </resources>
